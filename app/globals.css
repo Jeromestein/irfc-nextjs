@@ -1613,8 +1613,12 @@ h2 {
   }
 
   .journey-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+  }
+
+  .support-grid,
+  .content-section-grid {
+    display: flex;
   }
 
   .journey-card,
@@ -1653,7 +1657,7 @@ h2 {
   }
 
   .process-grid {
-    grid-template-columns: 1fr;
+    display: flex;
   }
 
   .process-grid article,
@@ -1686,7 +1690,7 @@ h2 {
   }
 
   .resource-grid {
-    grid-template-columns: 1fr;
+    display: flex;
   }
 
   .resource-card:first-child {
@@ -1760,6 +1764,70 @@ h2 {
   .content-section-grid article {
     min-height: 280px;
     padding: 30px;
+  }
+
+  .journey-grid,
+  .support-grid,
+  .process-grid,
+  .resource-grid,
+  .content-section-grid,
+  .service-stories {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .journey-grid,
+  .support-grid,
+  .process-grid,
+  .resource-grid,
+  .content-section-grid {
+    gap: 14px;
+    padding: 6px 22px 24px 2px;
+  }
+
+  .service-stories {
+    display: flex;
+    min-height: auto;
+    gap: 14px;
+    padding: 14px 22px 24px 16px;
+  }
+
+  .journey-grid::-webkit-scrollbar,
+  .support-grid::-webkit-scrollbar,
+  .process-grid::-webkit-scrollbar,
+  .resource-grid::-webkit-scrollbar,
+  .content-section-grid::-webkit-scrollbar,
+  .service-stories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .journey-card,
+  .journey-card:nth-child(4),
+  .journey-card:nth-child(5),
+  .support-grid article,
+  .process-grid article,
+  .process-grid article:not(:first-child),
+  .resource-card,
+  .content-section-grid article,
+  .service-story {
+    flex: 0 0 min(82vw, 360px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    transition: transform 280ms cubic-bezier(.22, 1, .36, 1), box-shadow 280ms ease;
+  }
+
+  .journey-card:active,
+  .support-grid article:active,
+  .process-grid article:active,
+  .resource-card:active,
+  .content-section-grid article:active,
+  .service-story:active {
+    transform: scale(.985);
   }
 }
 
