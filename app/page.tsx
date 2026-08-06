@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MobileStickyCta } from "@/components/mobile-sticky-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -73,19 +74,14 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="hero-art" aria-hidden="true">
-            <div className="hero-photo-wrap">
-              <Image
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=88"
-                alt=""
-                fill
-                sizes="(max-width: 900px) 100vw, 52vw"
-                className="hero-photo"
-                priority
-              />
-            </div>
-            <div className="orbit orbit-one" />
-            <div className="orbit orbit-two" />
-            <span className="gold-dot" />
+            <Image
+              src="/images/baby-sleeping.png"
+              alt=""
+              fill
+              sizes="100vw"
+              className="hero-photo"
+              priority
+            />
           </div>
           <div className="container hero-inner">
             <div className="hero-copy">
@@ -106,20 +102,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="hero-caption">
-            <span>Science-led</span>
-            <span>Physician-guided</span>
-            <span>Patient-centered</span>
-          </div>
-        </section>
-
-        <section className="trust-strip" aria-label="IRFC care principles">
-          <div className="container trust-grid">
-            <p><strong>Two legacies.</strong> One shared standard of care.</p>
-            <p><Microscope /> Advanced laboratory care</p>
-            <p><Users /> Experienced fertility specialists</p>
-            <p><MapPin /> Care across Southern California</p>
           </div>
         </section>
 
@@ -350,9 +332,7 @@ export default function Home() {
         </section>
       </main>
       <SiteFooter />
-      <Link href="/schedule-appointment" className="mobile-sticky-cta">
-        <Calendar width={18} height={18} /> Schedule Appointment
-      </Link>
+      <MobileStickyCta />
     </>
   );
 }
