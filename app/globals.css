@@ -1579,8 +1579,8 @@ h2 {
     margin-right: auto;
     margin-bottom: 0;
     margin-left: auto;
-    font-size: .94rem;
-    line-height: 1.68;
+    font-size: clamp(1.03rem, 4.4vw, 1.1rem);
+    line-height: 1.7;
   }
 
   .hero-actions {
