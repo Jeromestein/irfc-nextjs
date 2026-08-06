@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Manrope, Playfair_Display } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const manrope = Manrope({
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "600"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
   display: "swap",
 });
 
@@ -27,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${manrope.variable} ${playfair.variable}`}>{children}</body>
+      <body className={poppins.variable}>{children}</body>
     </html>
   );
 }

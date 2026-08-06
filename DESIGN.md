@@ -34,9 +34,6 @@ outcome promises.
 - Body text: at least 16px with comfortable line spacing
 - Do not introduce a serif display font.
 
-The current Manrope and Playfair Display implementation should eventually be
-migrated to Poppins.
-
 ## Voice
 
 - Clear, compassionate, specific, and inclusive
