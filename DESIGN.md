@@ -63,6 +63,7 @@ outcome promises.
 - Use rounded rectangles for cards, media panels, and grouped content.
 - Use approximately 28px card radii and 44px radii for large visual panels.
 - Avoid sharp rectangular section changes; prefer soft curves or gradients.
+- Use a restrained liquid-glass surface for sticky navigation.
 - Keep decorative shapes organic and restrained so content remains clear.
 - On mobile, present sibling cards as horizontal scroll-snap carousels with a
   partial preview of the next card instead of long vertical stacks.
