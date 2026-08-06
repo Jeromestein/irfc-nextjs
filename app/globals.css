@@ -1510,38 +1510,50 @@ h2 {
 
   .hero-inner {
     min-height: inherit;
+    align-items: flex-start;
   }
 
   .hero-copy {
+    display: flex;
     width: 100%;
-    padding: 38px 0 52px;
+    min-height: inherit;
+    flex-direction: column;
+    padding: 40px 0 28px;
+    text-align: center;
   }
 
   .hero-copy .eyebrow {
-    margin-bottom: 12px;
+    margin-bottom: 20px;
   }
 
   .hero h1 {
     max-width: 520px;
-    margin-bottom: 18px;
+    margin-right: auto;
+    margin-bottom: 28px;
+    margin-left: auto;
     font-size: clamp(2.75rem, 11.5vw, 3.25rem);
-    line-height: .96;
+    line-height: 1.02;
   }
 
   .hero-lede {
-    margin-bottom: 20px;
+    max-width: 520px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
     font-size: .94rem;
-    line-height: 1.55;
+    line-height: 1.68;
   }
 
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
-    gap: 12px;
+    gap: 18px;
+    margin-top: auto;
+    padding-top: 36px;
   }
 
   .hero-actions .text-link {
-    align-self: flex-start;
+    align-self: center;
   }
 
   .hero-art {
@@ -1553,8 +1565,8 @@ h2 {
 
   .hero-art::after {
     background:
-      linear-gradient(90deg, rgba(255,250,241,.98) 0%, rgba(255,250,241,.9) 54%, rgba(255,250,241,.05) 100%),
-      linear-gradient(180deg, rgba(255,250,241,.68) 0%, rgba(255,250,241,.55) 68%, rgba(255,250,241,.35) 100%);
+      linear-gradient(180deg, rgba(255,250,241,.93) 0%, rgba(255,250,241,.84) 54%, rgba(255,250,241,.54) 76%, rgba(255,250,241,.16) 100%),
+      linear-gradient(90deg, rgba(255,250,241,.28) 0%, transparent 72%);
   }
 
   .hero-photo {
