@@ -52,7 +52,9 @@ outcome promises.
 - Use a centered container near 1280px with generous section spacing.
 - Use dark purple primary buttons with white text.
 - Keep controls at least 44px high and provide visible focus states.
-- On mobile, use a clear menu and a logical single-column reading order.
+- Keep the header visible while scrolling.
+- On mobile, animate the menu from the header and use the remaining viewport
+  height for evenly spaced navigation and actions.
 - Use licensed, inclusive, natural photography; current Unsplash images are
   placeholders.
 

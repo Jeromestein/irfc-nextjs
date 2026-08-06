@@ -63,6 +63,7 @@ export function SiteHeader() {
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
             onClick={() => setOpen((value) => !value)}
           >
             <span />
@@ -71,7 +72,11 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className={`mobile-panel ${open ? "is-open" : ""}`} aria-hidden={!open}>
+      <div
+        id="mobile-navigation"
+        className={`mobile-panel ${open ? "is-open" : ""}`}
+        aria-hidden={!open}
+      >
         <nav aria-label="Mobile navigation">
           {navigation.map((item, index) => (
             <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
