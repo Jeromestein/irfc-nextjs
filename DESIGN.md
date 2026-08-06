@@ -56,6 +56,13 @@ outcome promises.
 - Use licensed, inclusive, natural photography; current Unsplash images are
   placeholders.
 
+## Shape and Transitions
+
+- Use rounded rectangles for cards, media panels, and grouped content.
+- Use approximately 28px card radii and 44px radii for large visual panels.
+- Avoid sharp rectangular section changes; prefer soft curves or gradients.
+- Keep decorative shapes organic and restrained so content remains clear.
+
 ## Accessibility
 
 - Meet WCAG 2.2 AA contrast requirements.

@@ -17,6 +17,8 @@
   --line: rgba(56, 45, 88, 0.14);
   --container: 1280px;
   --shadow: 0 24px 70px rgba(40, 32, 63, 0.13);
+  --radius-card: 28px;
+  --radius-card-large: 44px;
 }
 
 * {
@@ -369,9 +371,37 @@ h2 {
   filter: saturate(.82) sepia(.04);
 }
 
+.hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: 110px;
+  background: linear-gradient(180deg, transparent, rgba(255,250,241,.72) 68%, var(--ivory));
+  content: "";
+  pointer-events: none;
+}
+
 /* Journey */
 .journey-section {
-  background: var(--paper);
+  position: relative;
+  background: linear-gradient(180deg, var(--ivory) 0, var(--paper) 180px);
+}
+
+.journey-section::before {
+  position: absolute;
+  top: -42px;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: var(--ivory);
+  content: "";
+}
+
+.journey-section > .container {
+  position: relative;
 }
 
 .section-heading {
@@ -411,7 +441,7 @@ h2 {
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: var(--radius-card);
   padding: 28px;
   background: rgba(255,255,255,.65);
   transition: transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
@@ -499,6 +529,9 @@ h2 {
   display: grid;
   min-height: 720px;
   grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 14px;
+  background: var(--paper);
 }
 
 .service-story {
@@ -506,6 +539,7 @@ h2 {
   display: flex;
   overflow: hidden;
   align-items: flex-end;
+  border-radius: var(--radius-card-large);
   padding: clamp(40px, 6vw, 90px);
 }
 
@@ -621,7 +655,7 @@ h2 {
   position: relative;
   min-height: 650px;
   overflow: hidden;
-  border-radius: 48% 48% 4px 4px;
+  border-radius: 48% 48% var(--radius-card-large) var(--radius-card-large);
   box-shadow: var(--shadow);
 }
 
@@ -717,6 +751,7 @@ h2 {
 .support-grid article {
   min-height: 370px;
   border: 1px solid rgba(74,61,112,.15);
+  border-radius: var(--radius-card);
   padding: 42px 38px;
   background: rgba(255,255,255,.64);
 }
@@ -811,21 +846,23 @@ h2 {
   display: grid;
   margin-top: 72px;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgba(255,255,255,.2);
+  gap: 14px;
 }
 
 .process-grid article {
   min-height: 280px;
-  padding: 28px 28px 20px 0;
-  border-right: 1px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-card);
+  padding: 30px;
+  background: rgba(255,255,255,.045);
 }
 
 .process-grid article:not(:first-child) {
-  padding-left: 28px;
+  padding-left: 30px;
 }
 
 .process-grid article:last-child {
-  border-right: 0;
+  border-right: 1px solid rgba(255,255,255,.1);
 }
 
 .process-grid span {
@@ -871,7 +908,7 @@ h2 {
   position: relative;
   min-height: 540px;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: var(--radius-card-large);
   background:
     linear-gradient(125deg, rgba(255,255,255,.65), transparent),
     repeating-linear-gradient(35deg, rgba(74,61,112,.055) 0 1px, transparent 1px 25px),
@@ -942,6 +979,7 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  border-radius: var(--radius-card);
   padding: 38px;
   background: var(--purple-100);
 }
@@ -1052,7 +1090,7 @@ h2 {
   width: 300px;
   height: auto;
   padding: 7px;
-  border-radius: 2px;
+  border-radius: 14px;
   background: var(--ivory);
 }
 
@@ -1195,6 +1233,7 @@ h2 {
 .content-section-grid article {
   min-height: 320px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-card);
   padding: 38px;
   background: rgba(255,255,255,.6);
 }
@@ -1458,12 +1497,12 @@ h2 {
   }
 
   .process-grid article:nth-child(2) {
-    border-right: 0;
+    border-right: 1px solid rgba(255,255,255,.1);
   }
 
   .process-grid article:nth-child(3),
   .process-grid article:nth-child(4) {
-    border-top: 1px solid rgba(255,255,255,.14);
+    border-top: 1px solid rgba(255,255,255,.1);
   }
 
   .resource-grid {
@@ -1518,7 +1557,7 @@ h2 {
     width: 100%;
     min-height: inherit;
     flex-direction: column;
-    padding: 40px 0 28px;
+    padding: 40px 0 52px;
     text-align: center;
   }
 
@@ -1620,9 +1659,9 @@ h2 {
   .process-grid article,
   .process-grid article:not(:first-child) {
     min-height: 230px;
-    border-top: 1px solid rgba(255,255,255,.14);
-    border-right: 0;
-    padding: 24px 0;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius-card);
+    padding: 28px;
   }
 
   .process-grid span {
